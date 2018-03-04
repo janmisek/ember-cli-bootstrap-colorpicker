@@ -4,6 +4,7 @@
 const path = require('path');
 const Funnel = require('broccoli-funnel');
 const mergeTrees = require('broccoli-merge-trees');
+const DEFAULT_NODE_MODULES_PATH = 'node_modules';
 
 module.exports = {
   name: 'ember-cli-bootstrap-colorpicker',
@@ -21,17 +22,17 @@ module.exports = {
   },
 
   getColorpickerStylesPath() {
-    let nodeModulesPath = this.app.project.nodeModulesPath;
+    let nodeModulesPath = this.app.project.nodeModulesPath || DEFAULT_NODE_MODULES_PATH;
     return path.join(nodeModulesPath, 'bootstrap-colorpicker', 'dist', 'css');
   },
 
   getColorpickerJavascriptsPath() {
-    let nodeModulesPath = this.app.project.nodeModulesPath;
+    let nodeModulesPath = this.app.project.nodeModulesPath || DEFAULT_NODE_MODULES_PATH;
     return path.join(nodeModulesPath, 'bootstrap-colorpicker', 'dist', 'js');
   },
 
   getColorpickerImagePath() {
-    let nodeModulesPath = this.app.project.nodeModulesPath;
+    let nodeModulesPath = this.app.project.nodeModulesPath || DEFAULT_NODE_MODULES_PATH;
     return path.join(nodeModulesPath, 'bootstrap-colorpicker', 'dist', 'img');
   },
 
