@@ -24,6 +24,7 @@ export default Ember.Component.extend({
     // Prevent changing color if component is already set
     if (componentColor !== this.get('color')) {
       this.set('color', componentColor);
+      this.sendAction('changed', componentColor);
     }
   },
 
